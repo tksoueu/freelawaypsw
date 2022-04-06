@@ -7,7 +7,7 @@
 
 {% block 'body' %}
     <div class="box">
-        <form action ="{% url 'cadastro' %}" method="POST">{% csrf_token %}
+        <form action="{% url 'login' %}" method="post">{% csrf_token %}
             {% if messages %}
                 {% for message in messages %}
                     <div class="alert {{message.tags}}">
@@ -15,7 +15,7 @@
                     </div>
                 {% endfor %}
             {% endif %}
-            <h1 class="titulo font-degrade borda-bottom-degrade">INSCREVA-SE</h2>
+            <h1 class="titulo font-degrade borda-bottom-degrade">LOGAR</h2>
             <br>
             <span class="span-descricao">Nome de usuário:</span>
             <input type="text" class="form-control input-cadastro" name="username">
@@ -23,12 +23,9 @@
             <span class="span-descricao">Senha:</span>
             <input type="password" class="form-control input-cadastro" name="password">
             <br>
-            <span class="span-descricao">Confirmar senha:</span>
-            <input type="password" class="form-control input-cadastro" name="confirm-password">
-            <br>
-            <input  type="submit" value="CADASTRAR" class="btn btn-success btn-lg">
-            <a href="{% url 'login' %}" class="btn btn-primary btn-lg">LOGIN</a> 
+            <input  type="submit" value="LOGIN" class="btn btn-success btn-lg">
+            <a href="{% url 'cadastro' %}" class="btn btn-primary btn-lg">CADASTRO</a> 
         </form>
             
     </div>
-{% endblock %} 
+{% endblock %}
