@@ -41,7 +41,7 @@ def cadastro(request):
 def login(request):
     if request.method == "GET":
         if request.user.is_authenticated:
-            return redirect('/plataforma')
+            return redirect('/jobs/encontrar_jobs')
         return render(request, 'login.html')
     elif request.method == "POST":
         username = request.POST.get('username')
@@ -54,7 +54,7 @@ def login(request):
             return redirect('/auth/login')
         else:
             auth.login(request, usuario)
-            return redirect('/plataforma')
+            return redirect('/jobs/encontrar_jobs')
 
 
 def sair(request):
