@@ -4,3 +4,4 @@ venv/bin/python3
 venv/bin/python
 venv/bin/pip3
 venv/bin/pip
+.env
